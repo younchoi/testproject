@@ -1,0 +1,14 @@
+image : node:latest #가장 최근의 노드이미지 사용
+
+stage:
+    -test
+
+    cache:
+        paths:
+            - node_modules/
+
+testing:
+    stage: test
+    script:
+        -mpm install
+        -npm test
